@@ -2,6 +2,24 @@ const num1 = 0;
 // const operator = ["+","-","*","/"]; //not final
 const num2 = 0;
 
+const divParent = document.getElementById("container");
+const count = 9;
+
+const createNums = function(count) {
+    const fragmentChildren = document.createDocumentFragment();
+
+    for (let i = 0; i <= count; i++){
+        const divChild = document.createElement("button");
+        divChild.className = `child-bttn-${i}`;
+        divChild.textContent = `${i}`;
+        fragmentChildren.appendChild(divChild);
+    }
+
+    divParent.appendChild(fragmentChildren);
+};
+
+createNums(count);
+
 //function for add
 const add = function (a, b) {
     return a + b;
