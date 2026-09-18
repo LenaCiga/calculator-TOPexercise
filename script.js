@@ -2,15 +2,15 @@ const num1 = 0;
 // const operator = ["+","-","*","/"]; //not final
 const num2 = 0;
 
-const divParent = document.getElementById("container");
+const divParent = document.getElementById("number-container");
 const count = 9;
 
 const createNums = function(count) {
     const fragmentChildren = document.createDocumentFragment();
 
-    for (let i = 0; i <= count; i++){
+    for (let i = 1; i <= count; i++){
         const divChild = document.createElement("button");
-        divChild.className = `child-bttn-${i}`;
+        divChild.className = `child-bttn ${i}`;
         divChild.textContent = `${i}`;
         fragmentChildren.appendChild(divChild);
     }
@@ -47,7 +47,7 @@ const operate = function (num1, operator, num2) {
     else if (operator === "*") {
         return multiply(num1, num2);
     }
-    else {
+    else if (operator === "/") {
         return divide(num1, num2);
     }
 } //does this returns the num right away without pressing enter or =
