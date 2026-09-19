@@ -2,7 +2,7 @@ const num1 = 0;
 // const operator = ["+","-","*","/"]; //not final
 const num2 = 0;
 
-const divParent = document.getElementById("number-container");
+const divParent = document.getElementById("num-bttns");
 const count = 9;
 
 const createNums = function(count) {
@@ -10,7 +10,7 @@ const createNums = function(count) {
 
     for (let i = 1; i <= count; i++){
         const divChild = document.createElement("button");
-        divChild.className = `child-bttn ${i}`;
+        divChild.className = `num bttn ${i}`;
         divChild.textContent = `${i}`;
         fragmentChildren.appendChild(divChild);
     }
@@ -20,6 +20,30 @@ const createNums = function(count) {
 
 createNums(count);
 
+//create operators with js?
+const operators = ["÷", "x", "-", "+"];
+const operatorParent = document.getElementById("operator-container");
+
+const createMiscBttns = function (arr, arrParent) {
+    const fragmentChildren = document.createDocumentFragment();
+
+    for (const item of arr) {
+        const childElem = document.createElement("button");
+        childElem.className = `${item} bttn `;
+        childElem.textContent = `${item}`;
+        fragmentChildren.appendChild(childElem);
+    }
+
+    arrParent.appendChild(fragmentChildren);
+}
+
+createMiscBttns(operators, operatorParent);
+
+const numMisc = [".", 0, "="];
+const numMiscParent = document.getElementById("misc-bttns");
+
+createMiscBttns(numMisc, numMiscParent);
+document.querySelectorAll("#misc-bttns > button").forEach(bttn => bttn.classList.add("num"))
 //function for add
 const add = function (a, b) {
     return a + b;
