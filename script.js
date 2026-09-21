@@ -43,20 +43,21 @@ const numMisc = [".", 0, "="];
 const numMiscParent = document.getElementById("misc-bttns");
 
 createMiscBttns(numMisc, numMiscParent);
-document.querySelectorAll("#misc-bttns > button").forEach(bttn => bttn.classList.add("num"))
-//function for add
+document.querySelectorAll("#misc-bttns > button").forEach(bttn => bttn.classList.add("num"));
+
+//operations
 const add = function (a, b) {
     return a + b;
 };
-//function for subtract
+
 const subtract = function (a, b) {
     return a - b;
 };
-//function for multiply
+
 const multiply = function (a, b) {
     return a * b;
 };
-//function for divide
+
 const divide = function (a, b) {
     return a / b;
 };
