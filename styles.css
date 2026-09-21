@@ -10,13 +10,14 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* align-items: center; */ /*this made the display not appear*/
     padding: 2rem;
-    /* margin: auto; */ /*makes it centered, keeping it left for the split screen view*/
+    /* margin: auto; */
+    /*makes it centered, keeping it left for the split screen view*/
 }
 
 #container,
 #bttns,
+.delete-container,
 #number-container,
 #num-bttns,
 #misc-bttns,
@@ -24,7 +25,8 @@
     gap: 0.5rem;
 }
 
-#bttns, 
+#bttns,
+.delete-container,
 #number-container,
 #num-bttns,
 #misc-bttns,
@@ -33,7 +35,12 @@
 }
 
 .bttn {
-    padding: 1rem; 
+    padding: 1rem 0.5rem; /*left and right are overwritten by default button paddings, need to reset for complete control*/
+}
+
+.clear,
+.delete {
+    flex: 1;
 }
 
 #number-container {
@@ -41,12 +48,12 @@
     flex: 0.75;
 }
 
-#num-bttns{
+#num-bttns {
     flex-wrap: wrap;
 }
 
 .num {
-    flex: 1 0 calc(33.333% - 0.5rem);
+    flex: 1 0 30%;
 }
 
 #operator-container {
@@ -54,7 +61,7 @@
     flex: 0.25;
 }
 
-#display{
-    background-color: rosybrown;
+#display {
+    background-color: rgb(240, 209, 209);
     height: 6rem;
 }
